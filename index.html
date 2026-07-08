@@ -15,7 +15,7 @@
         <div>
           <p class="eyebrow">公开项目记录</p>
           <h1 id="title">杨竣博</h1>
-          <p class="role"><span>本地工具 / 数据复核</span><span>资料整理 / 技术文档</span></p>
+          <p class="role"><span>本地工具 / 数据复核</span><span>静态站交付 / 技术文档</span></p>
         </div>
       </div>
 
@@ -25,6 +25,7 @@
           <div><strong>本地工作台</strong><span>扫描样例项目，运行检查，生成交接说明</span></div>
           <div><strong>项目索引</strong><span>整理目录、技术栈、文档和风险线索</span></div>
           <div><strong>数据复核</strong><span>用虚构样例数据做查询、分档和复核报告</span></div>
+          <div><strong>静态站交付</strong><span>检查页面、链接、sitemap、Nginx 和交接清单</span></div>
           <div><strong>内容归档</strong><span>把微信公众号文章整理成 Markdown 和本地图片</span></div>
           <div><strong>硬件链路</strong><span>ESP32-C3 BLE 控制、UART 转发和手柄输入解析</span></div>
         </div>
@@ -75,6 +76,18 @@
         </article>
 
         <article class="project-card">
+          <div class="status">Python / 静态站交付</div>
+          <h3>static-site-delivery-kit</h3>
+          <p>从静态官网上线流程提炼出的交付工具包，检查页面元信息、本地链接、图片 alt、sitemap、404、robots 和 Nginx 模板。</p>
+          <ul>
+            <li>包含虚构样例站和生成报告</li>
+            <li>sitemap 与 Nginx 模板可复跑生成</li>
+            <li>unittest、审计和编译检查已通过</li>
+          </ul>
+          <a href="https://github.com/blacklemi3/static-site-delivery-kit">查看 GitHub</a>
+        </article>
+
+        <article class="project-card">
           <div class="status">Python / Markdown 归档</div>
           <h3>wechat-article-for-ai</h3>
           <p>把微信公众号文章整理成 Markdown、本地图片和结构化元数据，用于个人知识库、资料归档和 AI 阅读。</p>
@@ -114,8 +127,8 @@
         </article>
         <article>
           <h3>对应公开材料</h3>
-          <p>公开仓库只保留虚构样例、运行方式和边界说明，真实项目只抽象为方法和流程。</p>
-          <a href="https://github.com/blacklemi3/admission-data-workbench">查看数据复核工具</a>
+          <p>公开仓库只保留虚构样例、运行方式和边界说明，真实项目只抽象为方法、流程和检查清单。</p>
+          <a href="https://github.com/blacklemi3/static-site-delivery-kit">查看静态站交付工具</a>
         </article>
         <article>
           <h3>交付边界</h3>
