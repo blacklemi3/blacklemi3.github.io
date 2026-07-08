@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>杨竣博 | 项目记录</title>
-  <meta name="description" content="杨竣博的公开项目记录：本地工具、资料整理、Markdown 归档、ESP32-C3 蓝牙控制链路。">
+  <meta name="description" content="杨竣博的公开项目记录：本地工具、资料整理、数据复核、Markdown 归档、ESP32-C3 蓝牙控制链路。">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -15,7 +15,7 @@
         <div>
           <p class="eyebrow">公开项目记录</p>
           <h1 id="title">杨竣博</h1>
-          <p class="role"><span>本地工具 / 资料整理</span><span>硬件联调 / 技术文档</span></p>
+          <p class="role"><span>本地工具 / 数据复核</span><span>资料整理 / 技术文档</span></p>
         </div>
       </div>
 
@@ -24,6 +24,7 @@
         <div class="signal-grid" aria-label="项目类型">
           <div><strong>本地工作台</strong><span>扫描样例项目，运行检查，生成交接说明</span></div>
           <div><strong>项目索引</strong><span>整理目录、技术栈、文档和风险线索</span></div>
+          <div><strong>数据复核</strong><span>用虚构样例数据做查询、分档和复核报告</span></div>
           <div><strong>内容归档</strong><span>把微信公众号文章整理成 Markdown 和本地图片</span></div>
           <div><strong>硬件链路</strong><span>ESP32-C3 BLE 控制、UART 转发和手柄输入解析</span></div>
         </div>
@@ -59,6 +60,18 @@
             <li>unittest 与样例扫描已通过</li>
           </ul>
           <a href="https://github.com/blacklemi3/local-project-indexer">查看 GitHub</a>
+        </article>
+
+        <article class="project-card">
+          <div class="status">Python / 数据复核</div>
+          <h3>admission-data-workbench</h3>
+          <p>使用虚构样例数据演示升学资料查询、冲稳保分档和 Markdown 复核报告生成，重点把“能进组”和“能接受专业”分开检查。</p>
+          <ul>
+            <li>仅使用 Python 标准库</li>
+            <li>包含样例 CSV 与生成报告</li>
+            <li>unittest、数据校验和样例查询已通过</li>
+          </ul>
+          <a href="https://github.com/blacklemi3/admission-data-workbench">查看 GitHub</a>
         </article>
 
         <article class="project-card">
