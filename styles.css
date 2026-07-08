@@ -262,6 +262,152 @@ h1 {
   padding: 22px;
 }
 
+.case-list a {
+  display: inline-block;
+  margin-top: 8px;
+}
+
+.case-page {
+  background: var(--paper);
+}
+
+.case-hero {
+  padding: clamp(32px, 7vw, 84px) clamp(22px, 6vw, 76px);
+  border-bottom: 1px solid var(--line);
+  background:
+    linear-gradient(90deg, rgba(31, 96, 103, 0.08) 1px, transparent 1px),
+    linear-gradient(0deg, rgba(49, 93, 140, 0.06) 1px, transparent 1px),
+    var(--paper);
+  background-size: 36px 36px;
+}
+
+.back-link {
+  display: inline-block;
+  margin-bottom: clamp(28px, 5vw, 54px);
+}
+
+.case-hero h1 {
+  max-width: 980px;
+  font-size: clamp(2.4rem, 6vw, 5.2rem);
+}
+
+.case-lead {
+  max-width: 900px;
+  margin: 0;
+  color: var(--deep);
+  font-size: clamp(1.08rem, 2.1vw, 1.5rem);
+  font-weight: 700;
+}
+
+.case-band {
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.muted-band {
+  max-width: none;
+  background: #f1f5f4;
+}
+
+.muted-band > * {
+  max-width: 1280px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.delivery-grid,
+.output-grid,
+.related-list {
+  display: grid;
+  gap: 14px;
+}
+
+.delivery-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.delivery-card,
+.output-grid div,
+.related-list a {
+  min-width: 0;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  background: var(--surface);
+}
+
+.delivery-card {
+  padding: 22px;
+}
+
+.delivery-card h3 {
+  color: var(--deep);
+  font-size: 1.18rem;
+}
+
+.delivery-card p,
+.delivery-card li,
+.output-grid span,
+.related-list span,
+.process-list span {
+  color: var(--muted);
+}
+
+.delivery-card ul {
+  margin: 0;
+  padding-left: 18px;
+}
+
+.process-list {
+  display: grid;
+  gap: 12px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.process-list li {
+  display: grid;
+  grid-template-columns: minmax(140px, 0.28fr) minmax(0, 1fr);
+  gap: 16px;
+  padding: 18px 20px;
+  border-left: 4px solid var(--teal);
+  background: var(--surface);
+}
+
+.process-list strong,
+.output-grid strong,
+.related-list strong {
+  color: var(--deep);
+}
+
+.output-grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.output-grid div {
+  padding: 20px;
+}
+
+.output-grid strong,
+.output-grid span,
+.related-list strong,
+.related-list span {
+  display: block;
+}
+
+.output-grid strong,
+.related-list strong {
+  margin-bottom: 8px;
+}
+
+.related-list {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.related-list a {
+  padding: 20px;
+}
+
 .boundary-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -280,6 +426,9 @@ h1 {
   .intro,
   .project-grid,
   .case-list,
+  .delivery-grid,
+  .output-grid,
+  .related-list,
   .boundary-grid {
     grid-template-columns: 1fr;
   }
@@ -315,6 +464,10 @@ h1 {
 
   .section-head {
     display: block;
+  }
+
+  .process-list li {
+    grid-template-columns: 1fr;
   }
 }
 

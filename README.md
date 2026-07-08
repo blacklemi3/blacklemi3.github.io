@@ -11,6 +11,7 @@
 - `index.html`
 - `styles.css`
 - `assets/profile.jpg`
+- `cases/delivery-record.html`
 
 页面当前链接到 5 个公开仓库：
 

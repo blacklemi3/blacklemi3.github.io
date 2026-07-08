@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>脱敏交付记录 | 杨竣博</title>
+  <meta name="description" content="一份脱敏交付记录：从门户后台、资料复核、静态官网到部署交接，把零散需求整理为可运行、可维护、可交接的系统。">
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+  <main class="site case-page">
+    <section class="case-hero" aria-labelledby="case-title">
+      <a class="back-link" href="../index.html">返回项目记录</a>
+      <p class="eyebrow">脱敏交付记录</p>
+      <h1 id="case-title">从资料、网站到可接手系统</h1>
+      <p class="case-lead">这不是某一个源码仓库，而是一类真实交付经验的公开整理：在资料分散、需求变化、上线和后续维护都有约束的情况下，把页面、后台、数据、搜索可见性和交接文档收敛成可继续运行的系统。</p>
+    </section>
+
+    <section class="band case-band" aria-labelledby="workstreams-title">
+      <div class="section-head">
+        <p class="eyebrow">工作内容</p>
+        <h2 id="workstreams-title">三条交付线</h2>
+      </div>
+
+      <div class="delivery-grid">
+        <article class="delivery-card">
+          <div class="status">Web / 后台</div>
+          <h3>门户与后台内容系统</h3>
+          <p>面向门户类网站，处理前台页面、栏目结构、后台管理和内容发布流程，让非技术使用者可以持续维护内容。</p>
+          <ul>
+            <li>前台页面结构和栏目内容组织</li>
+            <li>后台录入、列表、发布和维护流程</li>
+            <li>基础部署、问题排查和交付衔接</li>
+          </ul>
+        </article>
+
+        <article class="delivery-card">
+          <div class="status">Data / 复核</div>
+          <h3>资料查询与方案复核</h3>
+          <p>把分散资料整理成可查询、可校验、可复核的数据流程，区分原始数据、结构化结果、人工备注和最终报告。</p>
+          <ul>
+            <li>资料字段、目录结构和缓存文件设计</li>
+            <li>多来源交叉检查和异常项标记</li>
+            <li>规则化分档、风险提示和 Markdown 报告</li>
+          </ul>
+        </article>
+
+        <article class="delivery-card">
+          <div class="status">Site / 可见性</div>
+          <h3>官网与搜索可见性</h3>
+          <p>从零搭建静态站点，并补齐结构化数据、站点地图、图片优化、搜索验证、Nginx 配置和备案迁移准备。</p>
+          <ul>
+            <li>多页面静态站、服务内容和案例结构</li>
+            <li>sitemap、OG 图、WebP 图片和结构化数据</li>
+            <li>部署配置、搜索验证和后续维护清单</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section class="band case-band muted-band" aria-labelledby="process-title">
+      <div class="section-head">
+        <p class="eyebrow">方法</p>
+        <h2 id="process-title">交付流程</h2>
+      </div>
+
+      <ol class="process-list">
+        <li><strong>盘点资料</strong><span>先把页面、文档、数据、素材、账号事项和待确认问题分层，明确哪些能公开、哪些需要内部保留。</span></li>
+        <li><strong>抽出结构</strong><span>把零散内容拆成栏目、字段、脚本、配置、报告和交接项，减少“靠人记住”的部分。</span></li>
+        <li><strong>做可验证结果</strong><span>每个结果都尽量留下可复跑命令、样例输出、截图、校验表或报告，而不是只给口头结论。</span></li>
+        <li><strong>补齐上线细节</strong><span>处理静态资源、路径、搜索验证、Nginx、安全头、备案准备和迁移事项，避免只完成页面但无法接手。</span></li>
+        <li><strong>写交接材料</strong><span>把运行方式、维护步骤、风险点、后续工作和不公开内容写清楚，让后续人员知道从哪里继续。</span></li>
+      </ol>
+    </section>
+
+    <section class="band case-band" aria-labelledby="outputs-title">
+      <div class="section-head">
+        <p class="eyebrow">产出</p>
+        <h2 id="outputs-title">留下来的东西</h2>
+      </div>
+
+      <div class="output-grid">
+        <div><strong>可运行工具</strong><span>查询脚本、本地工作台、静态站构建辅助脚本、报告生成流程。</span></div>
+        <div><strong>可复核数据</strong><span>字段说明、样例数据、异常清单、交叉验证记录和人工检查项。</span></div>
+        <div><strong>可维护页面</strong><span>门户页面、内容栏目、官网页面、图片资源、sitemap 和搜索验证文件。</span></div>
+        <div><strong>可交接文档</strong><span>README、部署说明、备案准备清单、后续维护建议和公开边界说明。</span></div>
+      </div>
+    </section>
+
+    <section class="band case-band muted-band" aria-labelledby="public-title">
+      <div class="section-head">
+        <p class="eyebrow">公开版本</p>
+        <h2 id="public-title">对应公开材料</h2>
+      </div>
+
+      <div class="related-list">
+        <a href="https://github.com/blacklemi3/admission-data-workbench">
+          <strong>admission-data-workbench</strong>
+          <span>用虚构样例数据演示资料查询、分档和复核报告生成。</span>
+        </a>
+        <a href="https://github.com/blacklemi3/local-handover-workbench">
+          <strong>local-handover-workbench</strong>
+          <span>用虚构样例工作区演示项目扫描、运行检查和交接说明生成。</span>
+        </a>
+        <a href="https://github.com/blacklemi3/local-project-indexer">
+          <strong>local-project-indexer</strong>
+          <span>扫描本地项目结构，整理技术栈、文档和风险线索。</span>
+        </a>
+      </div>
+    </section>
+
+    <section class="band boundary" aria-labelledby="case-boundary-title">
+      <div class="section-head">
+        <p class="eyebrow">公开边界</p>
+        <h2 id="case-boundary-title">没有公开的内容</h2>
+      </div>
+      <div class="boundary-grid">
+        <div>
+          <h3>保留方法</h3>
+          <p>公开页面只保留方法、流程、产出类型和可运行的虚构样例项目。</p>
+        </div>
+        <div>
+          <h3>去除细节</h3>
+          <p>不公开客户名称、真实域名、后台地址、账号、联系方式、合同报价、学生资料、部署凭据和内部交付包。</p>
+        </div>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
