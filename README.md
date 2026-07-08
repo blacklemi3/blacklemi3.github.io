@@ -13,12 +13,13 @@
 - `assets/profile.jpg`
 - `cases/delivery-record.html`
 
-页面当前链接到 6 个公开仓库：
+页面当前链接到 7 个公开仓库：
 
 - `local-handover-workbench`
 - `local-project-indexer`
 - `admission-data-workbench`
 - `static-site-delivery-kit`
+- `edge-ai-vision-deployment-kit`
 - `wechat-article-for-ai`
 - `esp32-c3-ble-control-demos`
 
