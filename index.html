@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>杨竣博 | 项目记录</title>
+  <meta name="description" content="杨竣博的公开项目记录：本地工具、资料整理、Markdown 归档、ESP32-C3 蓝牙控制链路。">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="site">
+    <section class="intro" aria-labelledby="title">
+      <div class="identity">
+        <img src="assets/profile.jpg" alt="杨竣博" class="avatar">
+        <div>
+          <p class="eyebrow">公开项目记录</p>
+          <h1 id="title">杨竣博</h1>
+          <p class="role"><span>本地工具 / 资料整理</span><span>硬件联调 / 技术文档</span></p>
+        </div>
+      </div>
+
+      <div class="thesis">
+        <p class="lead"><span>把零散项目、脚本、</span><span>运行日志和交接材料</span><span>整理成可以运行、</span><span>可以继续维护的工具。</span></p>
+        <div class="signal-grid" aria-label="项目类型">
+          <div><strong>本地工作台</strong><span>扫描样例项目，运行检查，生成交接说明</span></div>
+          <div><strong>项目索引</strong><span>整理目录、技术栈、文档和风险线索</span></div>
+          <div><strong>内容归档</strong><span>把微信公众号文章整理成 Markdown 和本地图片</span></div>
+          <div><strong>硬件链路</strong><span>ESP32-C3 BLE 控制、UART 转发和手柄输入解析</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="band projects" aria-labelledby="projects-title">
+      <div class="section-head">
+        <p class="eyebrow">GitHub</p>
+        <h2 id="projects-title">公开仓库</h2>
+      </div>
+
+      <div class="project-grid">
+        <article class="project-card primary">
+          <div class="status">Node / 本地工作台</div>
+          <h3>local-handover-workbench</h3>
+          <p>读取虚构样例工作区，显示项目摘要、技术标记和风险线索；执行预设检查命令，收集日志并生成 Markdown 交接说明。</p>
+          <ul>
+            <li>本地 Node 服务和静态页面</li>
+            <li>命令白名单和项目路径校验</li>
+            <li>Smoke test 已通过</li>
+          </ul>
+          <a href="https://github.com/blacklemi3/local-handover-workbench">查看 GitHub</a>
+        </article>
+
+        <article class="project-card">
+          <div class="status">Python / 项目索引</div>
+          <h3>local-project-indexer</h3>
+          <p>扫描本地工作区，识别项目根目录、技术栈、文档文件和风险线索，输出 Markdown 与 JSON 项目索引。</p>
+          <ul>
+            <li>仅使用 Python 标准库</li>
+            <li>包含虚构样例工作区和生成结果</li>
+            <li>unittest 与样例扫描已通过</li>
+          </ul>
+          <a href="https://github.com/blacklemi3/local-project-indexer">查看 GitHub</a>
+        </article>
+
+        <article class="project-card">
+          <div class="status">Python / Markdown 归档</div>
+          <h3>wechat-article-for-ai</h3>
+          <p>把微信公众号文章整理成 Markdown、本地图片和结构化元数据，用于个人知识库、资料归档和 AI 阅读。</p>
+          <ul>
+            <li>CLI 与 MCP server 两种入口</li>
+            <li>保留标题、作者、时间、图片和代码块</li>
+            <li>README 写明使用边界</li>
+          </ul>
+          <a href="https://github.com/blacklemi3/wechat-article-for-ai">查看 GitHub</a>
+        </article>
+
+        <article class="project-card">
+          <div class="status">ESP32-C3 / BLE</div>
+          <h3>esp32-ble-control-demos</h3>
+          <p>两个可编译的 ESP32-C3 示例：BLE 控制链路负责接收指令并转发 UART；手柄解析示例负责拆解 Xbox 输入包。</p>
+          <ul>
+            <li>PlatformIO 双环境编译通过</li>
+            <li>保留通用流程，移除真实设备信息</li>
+            <li>README 包含小白版原理说明</li>
+          </ul>
+          <a href="https://github.com/blacklemi3/esp32-c3-ble-control-demos">查看 GitHub</a>
+        </article>
+      </div>
+    </section>
+
+    <section class="band boundary" aria-labelledby="boundary-title">
+      <div class="section-head">
+        <p class="eyebrow">公开边界</p>
+        <h2 id="boundary-title">公开边界</h2>
+      </div>
+      <div class="boundary-grid">
+        <div>
+          <h3>公开内容</h3>
+          <p>公开仓库只包含可运行示例、虚构样例数据、README、运行方式和必要的边界说明。</p>
+        </div>
+        <div>
+          <h3>不公开内容</h3>
+          <p>不公开公司源码、客户资料、合同报价、内部路径、密钥、聊天记录、真实交付包和未授权素材。</p>
+        </div>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
