@@ -11,7 +11,18 @@
 - `index.html`
 - `styles.css`
 - `assets/profile.jpg`
+- `cases/system-records.html`
 - `cases/delivery-record.html`
+
+页面当前采用“案例优先”的结构：先解释真实系统记录，再链接到可运行公开仓库。
+
+真实系统记录：
+
+- 双 MCU 机器人控制链路
+- 嵌入式外设驱动与试验箱案例
+- “喝啥”消费级轻产品 App
+- 网络变更与自动回滚
+- 边缘视觉训练与端侧部署
 
 页面当前链接到 7 个公开仓库：
 
