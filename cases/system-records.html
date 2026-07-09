@@ -9,135 +9,141 @@
 </head>
 <body>
   <main class="site case-page">
-    <section class="case-hero" aria-labelledby="case-title">
-      <a class="back-link" href="../index.html">返回项目记录</a>
+    <header class="top-nav" aria-label="页面导航">
+      <a class="nav-brand" href="../index.html">杨竣博 · 项目记录</a>
+      <nav>
+        <a href="#map">项目地图</a>
+        <a href="#records">系统展开</a>
+        <a href="../index.html#repos">公开仓库</a>
+      </nav>
+    </header>
+
+    <section class="case-hero system-hero" aria-labelledby="case-title">
+      <a class="back-link" href="../index.html">返回首页</a>
       <p class="eyebrow">真实系统记录</p>
-      <h1 id="case-title">把真实项目拆成可公开说明的结构</h1>
-      <p class="case-lead">这里记录的是系统如何被设计、连接、运行和交付。公开版本只保留结构、流程、接口思路和可复核样例，不包含公司源码、真实客户资料、密钥、内部路径和未授权素材。</p>
+      <h1 id="case-title">先看地图，再看系统。</h1>
+      <p class="case-lead">这一页只做一件事：把真实项目按“硬件与设备、应用产品、工程交付”三条线讲清楚。每个项目都回答三个问题：它是什么、怎么工作、公开到哪里。</p>
     </section>
 
-    <section class="band case-band" aria-labelledby="overview-title">
-      <div class="section-head">
-        <p class="eyebrow">Overview</p>
-        <h2 id="overview-title">先看全貌</h2>
-      </div>
+    <section class="band system-layout" id="map" aria-labelledby="map-title">
+      <aside class="side-nav" aria-label="本页目录">
+        <strong>本页目录</strong>
+        <a href="#map">项目地图</a>
+        <a href="#hardware">硬件与设备</a>
+        <a href="#product">应用产品</a>
+        <a href="#delivery">工程交付</a>
+        <a href="#boundary">公开边界</a>
+      </aside>
 
-      <div class="system-note">
-        <h3>这些项目不是孤立的小脚本</h3>
-        <p>它们更像几条不同方向的系统线索：硬件侧要让传感器、舵机、电机、显示屏和语音模块稳定工作；应用侧要让用户流程、状态、规则和本地数据组织起来；交付侧要把网络、部署、资料和后续维护说清楚。</p>
-      </div>
-
-      <div class="fact-grid" aria-label="项目线索">
-        <div class="fact-card"><strong>硬件控制</strong><span>主控、协处理板、外设驱动、动作队列、通信协议。</span></div>
-        <div class="fact-card"><strong>应用产品</strong><span>ArkTS 页面、组件、服务、状态、规则和本地持久化。</span></div>
-        <div class="fact-card"><strong>交付维护</strong><span>网络变更、部署检查、资料复核、公开边界和文档化。</span></div>
-      </div>
-    </section>
-
-    <section class="band case-band muted-band" aria-labelledby="systems-title">
-      <div class="section-head">
-        <p class="eyebrow">Systems</p>
-        <h2 id="systems-title">系统拆解</h2>
-      </div>
-
-      <div class="detail-grid">
-        <article class="detail-block" id="robot">
-          <div class="status">Robot / 双 MCU</div>
-          <h3>机器人控制链路</h3>
-          <p>这套系统可以理解为“一个负责思考和交互的大脑，加上一个负责执行动作的身体控制板”。ESP32-S3 处理语音、联网、屏幕、远程通道和指令调度；Hi3863 运动控制板接收指令，解析协议，再通过 PCA9685 控制 8 路舵机完成动作。</p>
-          <div class="fact-grid">
-            <div class="fact-card"><strong>交互侧</strong><span>语音唤醒、ASR、LLM、TTS、双眼屏幕、飞书远程消息、Flutter App。</span></div>
-            <div class="fact-card"><strong>通信侧</strong><span>UART 帧协议、帧头、长度、命令、CRC、ACK/NACK、重试和状态回传。</span></div>
-            <div class="fact-card"><strong>运动侧</strong><span>PCA9685 舵机控制、动作队列、并发保护、姿态执行和异常处理。</span></div>
+      <div class="system-content">
+        <section class="map-panel" aria-labelledby="map-title">
+          <div class="section-head compact-head">
+            <p class="eyebrow">Project Map</p>
+            <h2 id="map-title">项目地图</h2>
           </div>
-          <ul>
-            <li>小白视角：用户说话或从 App 发指令，主控先把“想做什么”变成结构化动作命令，再交给运动板执行。</li>
-            <li>工程视角：主控和运动板之间不直接传自然语言，而是用稳定的二进制协议，降低误触发和动作失控的风险。</li>
-            <li>公开边界：可以公开协议思想、模拟器和示例动作；不公开真实固件、密钥、PCB、3D 文件和内部交接包。</li>
-          </ul>
-        </article>
 
-        <article class="detail-block" id="drivers">
-          <div class="status">Drivers / 外设</div>
-          <h3>嵌入式外设驱动与试验箱案例</h3>
-          <p>这部分不是单个设备，而是一组围绕 GPIO、I2C、PWM、UART、ADC 等基础接口展开的外设驱动和试验箱场景。价值在于把“能点亮一个模块”推进到“模块有统一接口、能组合、能在案例里跑起来”。</p>
-          <div class="fact-grid">
-            <div class="fact-card"><strong>传感与输入</strong><span>AHT20、红外、超声波、键盘模块、ADC 采集、基础传感器读取。</span></div>
-            <div class="fact-card"><strong>显示与输出</strong><span>OLED 帧缓冲、数码管、WS2812 灯带、舵机、电机和房间设备控制。</span></div>
-            <div class="fact-card"><strong>语音与通信</strong><span>UART 语音识别、MP3/播报模块、串口协议解析和状态反馈。</span></div>
+          <p class="map-intro">先用这张地图建立上下文：哪些是设备控制，哪些是应用产品，哪些是交付维护。下面每个条目都可以直接跳到详细说明。</p>
+
+          <div class="map-grid">
+            <a href="#robot"><span>硬件与设备</span><strong>机器人控制链路</strong><em>双 MCU、语音交互、运动控制</em></a>
+            <a href="#drivers"><span>硬件与设备</span><strong>外设驱动与试验箱</strong><em>I2C、PWM、UART、传感器和场景案例</em></a>
+            <a href="#vision"><span>硬件与设备</span><strong>边缘视觉部署</strong><em>标注、模型包、端侧检测报告</em></a>
+            <a href="#hesha"><span>应用产品</span><strong>消费级 ArkTS App</strong><em>抽卡决策、规则系统、状态管理</em></a>
+            <a href="#network"><span>工程交付</span><strong>网络变更与回滚</strong><em>VLAN、备份、自动回滚、验证日志</em></a>
           </div>
-          <ul>
-            <li>Python 驱动更适合快速验证和教学式硬件抽象，C 案例更接近嵌入式设备上的真实控制逻辑。</li>
-            <li>试验箱案例把外设驱动放进房间、灯光、门禁、环境检测、动作控制等组合场景里，避免停留在单点示例。</li>
-            <li>公开版本更适合整理成通用接口、mock 硬件和可运行测试，而不是直接发布原始课程包或公司目录。</li>
-          </ul>
-        </article>
+        </section>
 
-        <article class="detail-block" id="hesha">
-          <div class="status">ArkTS / App</div>
-          <h3>“喝啥”消费级轻产品 App</h3>
-          <p>这是一个面向年轻消费场景的 HarmonyOS NEXT / ArkTS App，用抽卡和轻量成长系统解决“今天喝什么”的选择困难。它不是硬件项目，也不是儿童教育内容，而是一个围绕即时决策、趣味反馈和留存路径设计的小产品。</p>
-          <div class="fact-grid">
-            <div class="fact-card"><strong>产品目标</strong><span>18-35 岁用户，3 秒内给出答案，打开到结果不超过 5 秒。</span></div>
-            <div class="fact-card"><strong>工程组织</strong><span>MVVM 分层，页面、组件、服务、模型、存储和测试分开维护。</span></div>
-            <div class="fact-card"><strong>规则系统</strong><span>概率、稀有度、保底、时间权重、历史权重、分享次数和本地持久化。</span></div>
+        <section class="records" id="records" aria-labelledby="records-title">
+          <div class="section-head compact-head">
+            <p class="eyebrow">Records</p>
+            <h2 id="records-title">系统展开</h2>
           </div>
-          <ul>
-            <li>用户看到的是一次轻松的抽卡结果，背后需要处理选项池、权重、重复控制、视觉反馈和历史记录。</li>
-            <li>设计上更接近消费工具和娱乐化决策，不应该被归到儿童课程或单纯教学案例里。</li>
-            <li>公开版本可以保留产品结构、状态流转、规则模拟和截图，不暴露未授权素材或上架相关私有信息。</li>
-          </ul>
-        </article>
 
-        <article class="detail-block" id="network">
-          <div class="status">Network / 回滚</div>
-          <h3>网络变更与自动回滚</h3>
-          <p>这类工作表面上是改配置，真正关键的是“远程改错了还能回来”。通过 VLAN Trunk 拆分办公网和业务网，并在变更脚本里加入备份、自动回滚、取消回滚和验证日志，让网络变更不依赖临场记忆。</p>
-          <div class="fact-grid">
-            <div class="fact-card"><strong>变更前</strong><span>备份 network、dhcp、firewall 配置，记录当前接口、网段和访问路径。</span></div>
-            <div class="fact-card"><strong>变更中</strong><span>写入 VLAN、接口、DHCP、防火墙规则，并启动延迟回滚。</span></div>
-            <div class="fact-card"><strong>变更后</strong><span>验证 SSH、网关、业务网段、办公网段和日志，再取消回滚任务。</span></div>
+          <section class="record-group" id="hardware" aria-labelledby="hardware-title">
+            <h3 id="hardware-title">硬件与设备</h3>
+
+            <article class="record-card" id="robot">
+              <div class="record-kicker">Hardware 01</div>
+              <h4>机器人控制链路</h4>
+              <p>这套系统可以理解为“一个负责思考和交互的大脑，加上一个负责执行动作的身体控制板”。ESP32-S3 处理语音、联网、屏幕、远程通道和指令调度；Hi3863 运动控制板解析动作指令，再通过 PCA9685 控制舵机。</p>
+              <dl class="record-points">
+                <div><dt>它是什么</dt><dd>双 MCU 协作的机器人系统，主控负责交互，运动板负责动作执行。</dd></div>
+                <div><dt>怎么工作</dt><dd>用户语音或 App 指令先转成结构化动作命令，再通过 UART 帧协议交给运动板执行。</dd></div>
+                <div><dt>公开到哪里</dt><dd>可以公开协议思想、模拟器和示例动作；不公开真实固件、密钥、PCB、3D 文件和内部交接包。</dd></div>
+              </dl>
+            </article>
+
+            <article class="record-card" id="drivers">
+              <div class="record-kicker">Hardware 02</div>
+              <h4>嵌入式外设驱动与试验箱案例</h4>
+              <p>这部分是一组围绕 GPIO、I2C、PWM、UART、ADC 等基础接口展开的外设驱动和试验箱场景。重点不是点亮一个模块，而是让模块有统一接口、能组合、能放进真实场景里。</p>
+              <dl class="record-points">
+                <div><dt>它是什么</dt><dd>OLED、PCA9685、AHT20、数码管、灯带、语音模块、红外、超声波、电机等外设驱动和场景案例。</dd></div>
+                <div><dt>怎么工作</dt><dd>Python 驱动用于快速验证和接口抽象，C 案例更接近设备端控制逻辑。</dd></div>
+                <div><dt>公开到哪里</dt><dd>适合整理成通用接口、mock 硬件和可运行测试，不直接发布原始课程包或公司目录。</dd></div>
+              </dl>
+            </article>
+
+            <article class="record-card" id="vision">
+              <div class="record-kicker">Hardware 03</div>
+              <h4>边缘视觉训练与端侧部署</h4>
+              <p>这条线把视觉模型从训练工具里的结果推进到设备上能加载、能识别、能看日志。公开仓库已经用虚构样例保留标注校验、部署包校验、检测模拟和报告生成流程。</p>
+              <dl class="record-points">
+                <div><dt>它是什么</dt><dd>面向 K210 / Maix / CanMV / SentryMV 风格设备的视觉部署检查流程。</dd></div>
+                <div><dt>怎么工作</dt><dd>检查 VOC XML、labels、model-info、boot.py、模型文件和端侧检测结果之间的引用关系。</dd></div>
+                <div><dt>公开到哪里</dt><dd><a href="https://github.com/blacklemi3/edge-ai-vision-deployment-kit">edge-ai-vision-deployment-kit</a> 使用虚构样例，不包含真实图片和模型权重。</dd></div>
+              </dl>
+            </article>
+          </section>
+
+          <section class="record-group" id="product" aria-labelledby="product-title">
+            <h3 id="product-title">应用产品</h3>
+
+            <article class="record-card" id="hesha">
+              <div class="record-kicker">Product 01</div>
+              <h4>“喝啥”消费级轻产品 App</h4>
+              <p>这是一个面向年轻消费场景的 HarmonyOS NEXT / ArkTS App，用抽卡和轻量成长系统解决“今天喝什么”的选择困难。它不是儿童教育内容，而是一个即时决策和趣味反馈的小产品。</p>
+              <dl class="record-points">
+                <div><dt>它是什么</dt><dd>面向 18-35 岁用户的消费决策 App，目标是 3 秒内给出答案。</dd></div>
+                <div><dt>怎么工作</dt><dd>按 MVVM 分层组织页面、组件、服务、模型、存储和测试，规则层处理概率、保底、时间权重和历史权重。</dd></div>
+                <div><dt>公开到哪里</dt><dd>适合公开产品结构、状态流转、规则模拟和截图，不暴露未授权素材或上架私有信息。</dd></div>
+              </dl>
+            </article>
+          </section>
+
+          <section class="record-group" id="delivery" aria-labelledby="delivery-title">
+            <h3 id="delivery-title">工程交付</h3>
+
+            <article class="record-card" id="network">
+              <div class="record-kicker">Delivery 01</div>
+              <h4>网络变更与自动回滚</h4>
+              <p>这类工作表面上是改配置，真正关键的是远程改错了还能回来。通过 VLAN Trunk 拆分办公网和业务网，并在变更脚本里加入备份、自动回滚、取消回滚和验证日志。</p>
+              <dl class="record-points">
+                <div><dt>它是什么</dt><dd>一套网络变更运行手册和脚本思路，服务 VLAN、OpenWrt / iStoreOS 这类配置变更场景。</dd></div>
+                <div><dt>怎么工作</dt><dd>变更前备份 network、dhcp、firewall；变更中启动延迟回滚；验证通过后取消回滚任务。</dd></div>
+                <div><dt>公开到哪里</dt><dd>可以公开流程和脚本结构，不公开真实 IP、设备账号、现场拓扑和内部配置文件。</dd></div>
+              </dl>
+            </article>
+          </section>
+        </section>
+
+        <section class="boundary-panel" id="boundary" aria-labelledby="boundary-title">
+          <div class="section-head compact-head">
+            <p class="eyebrow">Boundary</p>
+            <h2 id="boundary-title">公开边界</h2>
           </div>
-          <ul>
-            <li>小白视角：就像在远程改一把门锁，必须提前留一把能自动恢复的钥匙。</li>
-            <li>工程视角：把高风险人工操作拆成可复查步骤，任何一步失败都能回到可访问状态。</li>
-            <li>公开版本只说明流程和脚本结构，不公开真实 IP、设备账号、现场拓扑和内部配置文件。</li>
-          </ul>
-        </article>
 
-        <article class="detail-block" id="vision">
-          <div class="status">Vision / Edge AI</div>
-          <h3>边缘视觉训练与端侧部署</h3>
-          <p>这条线把视觉模型从“训练工具里的结果”推进到“设备上能加载、能识别、能看日志”。围绕 K210 / Maix / CanMV / SentryMV 风格设备整理标注、标签、模型信息、启动脚本和端侧检测摘要。</p>
-          <div class="fact-grid">
-            <div class="fact-card"><strong>数据侧</strong><span>VOC XML、图片尺寸、标注框、类别标签和训练数据目录。</span></div>
-            <div class="fact-card"><strong>部署侧</strong><span>labels.txt、model-info.json、boot.py、kmodel 文件和启动检查。</span></div>
-            <div class="fact-card"><strong>验证侧</strong><span>端侧检测结果摘要、类别分布、置信度统计和 Markdown 报告。</span></div>
+          <div class="boundary-grid">
+            <div>
+              <h3>可以公开</h3>
+              <p>系统结构、模块职责、接口思路、虚构样例、运行截图、脱敏报告、可复跑命令和通用化后的工具代码。</p>
+            </div>
+            <div>
+              <h3>不公开</h3>
+              <p>公司源码、真实客户资料、合同报价、密钥、账号、内部路径、现场网络配置、真实模型权重和未授权素材。</p>
+            </div>
           </div>
-          <ul>
-            <li>公开仓库使用虚构样例，保留校验流程和报告形态，不暴露真实图片、真实模型权重和训练日志。</li>
-            <li>这类工具的意义不是替代训练平台，而是补齐训练后到设备部署之间容易漏掉的检查项。</li>
-            <li><a href="https://github.com/blacklemi3/edge-ai-vision-deployment-kit">查看公开仓库</a></li>
-          </ul>
-        </article>
-      </div>
-    </section>
-
-    <section class="band boundary" aria-labelledby="boundary-title">
-      <div class="section-head">
-        <p class="eyebrow">Boundary</p>
-        <h2 id="boundary-title">公开边界</h2>
-      </div>
-
-      <div class="boundary-grid">
-        <div>
-          <h3>可以公开</h3>
-          <p>系统结构、模块职责、接口思路、虚构样例、运行截图、脱敏报告、可复跑命令和通用化后的工具代码。</p>
-        </div>
-        <div>
-          <h3>不公开</h3>
-          <p>公司源码、真实客户资料、合同报价、密钥、账号、内部路径、现场网络配置、真实模型权重和未授权素材。</p>
-        </div>
+        </section>
       </div>
     </section>
   </main>
