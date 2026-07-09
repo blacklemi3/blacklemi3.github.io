@@ -51,6 +51,7 @@
             <a href="#vision"><span>硬件与设备</span><strong>边缘视觉部署</strong><em>标注、模型包、端侧检测报告</em></a>
             <a href="#hesha"><span>应用产品</span><strong>消费级 ArkTS App</strong><em>抽卡决策、规则系统、状态管理</em></a>
             <a href="#network"><span>工程交付</span><strong>网络变更与回滚</strong><em>VLAN、备份、自动回滚、验证日志</em></a>
+            <a href="#site-tools"><span>工程交付</span><strong>官网与内部工具上线</strong><em>备案迁移、搜索可见、后台风控</em></a>
           </div>
         </section>
 
@@ -123,6 +124,17 @@
                 <div><dt>它是什么</dt><dd>一套网络变更运行手册和脚本思路，服务 VLAN、OpenWrt / iStoreOS 这类配置变更场景。</dd></div>
                 <div><dt>怎么工作</dt><dd>变更前备份 network、dhcp、firewall；变更中启动延迟回滚；验证通过后取消回滚任务。</dd></div>
                 <div><dt>公开到哪里</dt><dd>可以公开流程和脚本结构，不公开真实 IP、设备账号、现场拓扑和内部配置文件。</dd></div>
+              </dl>
+            </article>
+
+            <article class="record-card" id="site-tools">
+              <div class="record-kicker">Delivery 02</div>
+              <h4>咨询机构官网与内部工具上线</h4>
+              <p>这条线不是单纯做页面，而是把官网、备案、域名、HTTPS、搜索可见性和内部工具访问边界一起交付。公开官网负责被访问和被搜索引擎理解，内部工具则拆到独立入口，用登录、审计、水印和会话控制降低资料外泄风险。</p>
+              <dl class="record-points">
+                <div><dt>它是什么</dt><dd>一个官网上线与内部知识工具部署项目，包含多页面官网、备案迁移、搜索验证、后台入口隔离和访问风险处理。</dd></div>
+                <div><dt>怎么工作</dt><dd>官网先用过渡节点上线，备案完成后迁移到国内云服务器；后台不挂在公开官网路径下，未登录访问跳转登录，并保留访问记录、个人水印、会话有效期和无操作退出。</dd></div>
+                <div><dt>公开到哪里</dt><dd>公开方法、流程和脱敏样例，不公开真实客户资料、后台地址、账号、服务器路径、部署凭据、IP 和内部交付包。</dd></div>
               </dl>
             </article>
           </section>

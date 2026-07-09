@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>脱敏交付记录 | 杨竣博</title>
-  <meta name="description" content="一份脱敏交付记录：从门户后台、资料复核、静态官网到部署交接，把零散需求整理为可运行、可维护、可交接的系统。">
+  <meta name="description" content="一份脱敏交付记录：从门户后台、资料复核、官网上线、备案迁移、内部工具风险控制到部署交接，把零散需求整理为可运行、可维护、可交接的系统。">
   <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="../styles.css">
 </head>
@@ -14,7 +14,7 @@
       <a class="back-link" href="../index.html">返回项目记录</a>
       <p class="eyebrow">脱敏交付记录</p>
       <h1 id="case-title">从资料、网站到可接手系统</h1>
-      <p class="case-lead">这不是某一个源码仓库，而是一类真实交付经验的公开整理：在资料分散、需求变化、上线和后续维护都有约束的情况下，把页面、后台、数据、搜索可见性和交接文档收敛成可继续运行的系统。</p>
+      <p class="case-lead">这不是某一个源码仓库，而是一类真实交付经验的公开整理：在资料分散、需求变化、上线合规、内部访问和后续维护都有约束的情况下，把页面、后台、数据、搜索可见性、风险控制和交接文档收敛成可继续运行的系统。</p>
     </section>
 
     <section class="band case-band" aria-labelledby="workstreams-title">
@@ -47,16 +47,32 @@
         </article>
 
         <article class="delivery-card">
-          <div class="status">Site / 可见性</div>
-          <h3>官网与搜索可见性</h3>
-          <p>从零搭建静态站点，并补齐结构化数据、站点地图、图片优化、搜索验证、Nginx 配置和备案迁移准备。</p>
+          <div class="status">Site / 上线</div>
+          <h3>官网迁移与内部工具隔离</h3>
+          <p>从抢上线、域名解析、备案迁移、HTTPS、Nginx、搜索验证，到内部工具登录与访问风险控制，形成一条可检查、可回滚、可交接的上线流程。</p>
           <ul>
-            <li>多页面静态站、服务内容和案例结构</li>
-            <li>sitemap、OG 图、WebP 图片和结构化数据</li>
-            <li>部署配置、搜索验证和后续维护清单</li>
+            <li>先用过渡节点完成上线，备案完成后迁移到国内云服务器</li>
+            <li>sitemap、robots、OG 图、WebP 图片、结构化数据和搜索验证</li>
+            <li>内部工具独立入口、受控登录、访问记录、水印和会话时效</li>
           </ul>
         </article>
       </div>
+    </section>
+
+    <section class="band case-band muted-band" aria-labelledby="site-tool-title">
+      <div class="section-head">
+        <p class="eyebrow">实际交付</p>
+        <h2 id="site-tool-title">咨询机构官网与内部工具上线</h2>
+      </div>
+
+      <ol class="process-list">
+        <li><strong>先把站点跑起来</strong><span>备案完成前，先用过渡服务器完成官网上线，让宣传页面、联系入口、案例内容和基础搜索入口尽早可访问。</span></li>
+        <li><strong>备案后迁回国内</strong><span>备案通过后迁移到国内云服务器，补齐 HTTPS、规范域名跳转、ICP备案展示、公安备案展示和 Nginx 配置。</span></li>
+        <li><strong>让搜索能读懂</strong><span>处理 sitemap、robots、搜索平台验证文件、结构化数据、OG 图、图片压缩和 WebP 资源，减少“页面有了但搜索看不见”的问题。</span></li>
+        <li><strong>把后台从官网拆开</strong><span>内部工具使用独立入口，不挂在公开官网路径下；未登录访问会跳转登录，工具侧 robots 禁止收录。</span></li>
+        <li><strong>补上访问风险处理</strong><span>后台保留访问记录、个人水印、会话有效期、长时间无操作退出、单账号会话控制和管理员处置入口。</span></li>
+        <li><strong>留下检查和回滚</strong><span>迁移前后保留 DNS、首页、备案文件、robots、sitemap、后台跳转、404 隔离和回滚方案的检查清单。</span></li>
+      </ol>
     </section>
 
     <section class="band case-band muted-band" aria-labelledby="process-title">
@@ -69,7 +85,7 @@
         <li><strong>盘点资料</strong><span>先把页面、文档、数据、素材、账号事项和待确认问题分层，明确哪些能公开、哪些需要内部保留。</span></li>
         <li><strong>抽出结构</strong><span>把零散内容拆成栏目、字段、脚本、配置、报告和交接项，减少“靠人记住”的部分。</span></li>
         <li><strong>做可验证结果</strong><span>每个结果都尽量留下可复跑命令、样例输出、截图、校验表或报告，而不是只给口头结论。</span></li>
-        <li><strong>补齐上线细节</strong><span>处理静态资源、路径、搜索验证、Nginx、安全头、备案准备和迁移事项，避免只完成页面但无法接手。</span></li>
+        <li><strong>补齐上线细节</strong><span>处理静态资源、路径、搜索验证、Nginx、安全头、备案迁移、后台隔离和访问控制，避免只完成页面但无法接手。</span></li>
         <li><strong>写交接材料</strong><span>把运行方式、维护步骤、风险点、后续工作和不公开内容写清楚，让后续人员知道从哪里继续。</span></li>
       </ol>
     </section>
@@ -95,8 +111,8 @@
       <div class="output-grid">
         <div><strong>可运行工具</strong><span>查询脚本、本地工作台、静态站构建辅助脚本、报告生成流程。</span></div>
         <div><strong>可复核数据</strong><span>字段说明、样例数据、异常清单、交叉验证记录和人工检查项。</span></div>
-        <div><strong>可维护页面</strong><span>门户页面、内容栏目、官网页面、图片资源、sitemap 和搜索验证文件。</span></div>
-        <div><strong>可交接文档</strong><span>README、部署说明、备案准备清单、后续维护建议和公开边界说明。</span></div>
+        <div><strong>可维护页面</strong><span>门户页面、内容栏目、官网页面、图片资源、sitemap、robots 和搜索验证文件。</span></div>
+        <div><strong>可交接文档</strong><span>README、部署说明、备案迁移清单、后台访问规则、后续维护建议和公开边界说明。</span></div>
       </div>
     </section>
 
@@ -109,7 +125,7 @@
       <div class="related-list">
         <a href="https://github.com/blacklemi3/static-site-delivery-kit">
           <strong>static-site-delivery-kit</strong>
-          <span>用虚构样例站演示页面审计、sitemap、Nginx 模板和交付清单。</span>
+          <span>用虚构样例站演示页面审计、sitemap、robots、Nginx 模板、上线检查和交付清单。</span>
         </a>
         <a href="https://github.com/blacklemi3/admission-data-workbench">
           <strong>admission-data-workbench</strong>
